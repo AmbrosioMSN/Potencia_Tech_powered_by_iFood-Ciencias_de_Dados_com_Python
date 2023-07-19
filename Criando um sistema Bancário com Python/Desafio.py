@@ -26,7 +26,8 @@ while True:
         valor_deposito = float(input("Digite o valor de Deposito: "))
         if valor_deposito > 0:
             saldo += valor_deposito
-            print("Valor Depositado com Sucesso!!")
+            extrato += f"Depósito: {valor_deposito:.2f}\n"
+            print("Valor Depósitado com Sucesso!!")
         else:
             print()
             print("O valor de deposito é inferior a 0 e não pode ser depositado!")
@@ -42,6 +43,7 @@ while True:
                    print()
                    print("Saldo insuficiente para a operação!")
                else:
+                   extrato += f"Saque: {valor_saque:.2f}\n"
                    numero_saques += 1
                    saldo -= valor_saque
                    print(f"Saque de R${valor_saque}")
@@ -57,7 +59,7 @@ while True:
 
 # Operação de extrato
     elif opcao == "3":
-        extrato = f"R${saldo:.2f}"
+        extrato += f"Saldo Atual = R${saldo:.2f}\n"
         print()
         print("*********** Extrato Bancário ***********")
         print(extrato)
